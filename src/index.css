@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@plugin "daisyui";
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-tablet: 40rem;
+  --breakpoint-laptop: 76rem;
+  --breakpoint-desktop: 95rem;
+  
+}
