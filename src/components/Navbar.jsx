@@ -1,14 +1,15 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
     <div className="bg-indigo-400">
-      <div className="navbar container mx-auto">
+      <div className="navbar max-w-7xl mx-auto">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">Redux Card</a>
+          <Link to="/" className="hover:underline hover:text-yellow-500 text-xl">Redux Card</Link>
         </div>
         <div className="flex-none">
-          <div className="dropdown dropdown-end">
+          <div className="dropdown dropdown-end pr-5">
             <div
               tabIndex={0}
               role="button"
@@ -33,7 +34,7 @@ const Navbar = () => {
                 <span className="badge badge-sm indicator-item">8</span>
               </div>
             </div>
-            <div
+            {/* <div
               tabIndex={0}
               className="card card-compact dropdown-content bg-base-100 z-1 mt-3 w-52 shadow"
             >
@@ -46,7 +47,7 @@ const Navbar = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="dropdown dropdown-end">
             <div
@@ -63,7 +64,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-4 w-52 p-2 shadow"
             >
               <li>
                 <a className="justify-between">

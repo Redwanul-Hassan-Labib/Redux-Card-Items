@@ -1,15 +1,23 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-import { BrowserRouter, Route, Routes } from 'react-router'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.jsx";
+import { BrowserRouter, Route, Routes } from "react-router";
+import { Provider } from "react-redux";
+import store from "./redux/store.js";
+import Home from "./components/Home.jsx";
 
-createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-     <Routes>
-      <Route path="/" element={<App />} >
-      <Route path="/home" element={<div className='text-white'>labib</div>}/>
-      </Route>
-    </Routes>
-  </BrowserRouter>,
-)
+createRoot(document.getElementById("root")).render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route  element={<App />}>
+          <Route
+            path="/"
+            element={<Home/>}
+          />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  </Provider>
+);
