@@ -1,13 +1,13 @@
 import React from "react";
 
 const ProductCard = ({productitems}) => {
-    const { name, category, image, date, description } = productitems || {};
+    const { name, category, image, date, description, price } = productitems || {};
   return (
     <div className="card bg-base-100 text-white w-96 shadow-sm">
       <figure>
         <img
           src={image}
-          alt="Shoes"
+          alt="image"
           className="w-full h-80 object-cover"
         />
       </figure>
@@ -20,7 +20,7 @@ const ProductCard = ({productitems}) => {
         </h2>
             </div>
             <div>
-                <p className="text-2xl mb-[10px]"><span className="text-[35px]">$</span>200</p>
+                <p className="text-2xl mb-[10px]"><span className="text-[35px]">$</span>{price}</p>
             </div>
         </div>
         <p>
