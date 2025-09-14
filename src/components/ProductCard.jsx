@@ -1,7 +1,16 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { AddToCardItem } from "../redux/feature/card/cardSlice";
 
 const ProductCard = ({productitems}) => {
     const { name, category, image, date, description, price } = productitems || {};
+
+    const dispatch = useDispatch();
+    const handleAddToCard = ()=>{
+      dispatch(AddToCardItem(productitems))
+    }
+
+    
   return (
     <div className="card bg-base-100 text-white w-96 shadow-sm">
       <figure>
@@ -28,7 +37,7 @@ const ProductCard = ({productitems}) => {
         </p>
         <div className="flex items-center justify-between">
           <div className="badge badge-outline">{date}</div>
-          <button className="px-3 py-1.5 bg-blue-500 rounded hover:bg-blue-800 cursor-pointer text-[16px] font-semibold">Add To Card</button>
+          <button onClick={handleAddToCard} className="px-3 py-1.5 bg-blue-500 rounded hover:bg-blue-800 cursor-pointer text-[16px] font-semibold">Add To Card</button>
         </div>
       </div>
     </div>

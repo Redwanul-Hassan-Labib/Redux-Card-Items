@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import { Provider } from "react-redux";
 import store from "./redux/store.js";
 import Home from "./components/Home.jsx";
+import CardItems from "./components/CardItems.jsx";
 
 createRoot(document.getElementById("root")).render(
   <Provider store={store}>
@@ -15,6 +16,10 @@ createRoot(document.getElementById("root")).render(
           <Route
             path="/"
             element={<Home/>}
+          />
+          <Route
+            path="/product-card"
+            element={<CardItems/>}
           />
         </Route>
       </Routes>

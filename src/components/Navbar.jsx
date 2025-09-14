@@ -1,21 +1,40 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
+import { FaCartPlus } from "react-icons/fa";
+
 
 const Navbar = () => {
+
+  const cards = useSelector(state=>state.card)
+
+  console.log(cards);
+
   return (
     <div className="bg-indigo-400">
       <div className="navbar max-w-7xl mx-auto">
         <div className="flex-1">
-          <Link to="/" className="hover:underline hover:text-yellow-500 text-xl">Redux Card</Link>
+          <Link to="/" className="hover:underline hover:text-yellow-500 text-xl">Shopping With RTK</Link>
         </div>
         <div className="flex-none">
           <div className="dropdown dropdown-end pr-5">
             <div
-              tabIndex={0}
+              // tabIndex={0}
               role="button"
               className="btn btn-ghost btn-circle"
             >
-              <div className="indicator">
+
+              <Link to="/product-card">
+              <div className="relative">
+                <FaCartPlus className="text-2xl"/>
+                <div className="w-5 h-5 absolute bg-red-700 rounded-full -top-2 -right-2.5">
+                  <span className="flex justify-center items-center"> {cards.length ? cards.length : 0}</span>
+                </div>
+              </div>
+              </Link>
+
+              {/* <Link to="/product-card">
+              <div  className="indicator">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
@@ -31,8 +50,9 @@ const Navbar = () => {
                     d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                   />{" "}
                 </svg>
-                <span className="badge badge-sm indicator-item">8</span>
+                <span className="badge badge-sm indicator-item">{cards.length ? cards.length : 0}</span>
               </div>
+              </Link> */}
             </div>
             {/* <div
               tabIndex={0}
